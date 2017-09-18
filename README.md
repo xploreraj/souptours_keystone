@@ -1,2 +1,2 @@
 # souptours_keystone
-Trying to create a travel website with keystone js.
+Trying to create a SUP tour website with keystone js.
