@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <article>
+                <p><a href="/tours">&larr; Back to Tours</a></p>
+                <hr>
+                <header>
+                    <h1>{{data.tour.title}}</h1>
+                </header>
+                <div class="row">
+                    <div id="tourImageCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            {{#each data.tour.images}}
+                                {{#if @first}}
+                                    <li data-target="#tourImageCarousel" data-slide-to="0" class="active"></li>
+                                {{else}}
+                                    <li data-target="#tourImageCarousel" data-slide-to="{{@index}}"></li>
+                                {{/if}}
+                            {{/each}}
+                        </ol>
+                        
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            {{#each data.tour.images}}
+                                {{#if @first}}
+                                    <div class="item active">
+                                {{else}}
+                                    <div class="item">
+                                {{/if}}
+                                        <img src="{{cloudinaryUrl}}" style="width:100%;">
+                                    </div>
+                            {{/each}}
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#tourImageCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#tourImageCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
