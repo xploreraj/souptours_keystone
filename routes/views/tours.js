@@ -5,7 +5,7 @@ exports = module.exports = function(req, res){
         locals = res.locals;
 
         //set locals - bootstrap navbar active selection
-        locals.location = 'tours';
+        locals.section = 'tours';
 
         //Load tours
         view.query('tours', keystone.list('Tour').model.find());
